@@ -20,6 +20,8 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <Use64BitIISExpress />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -164,11 +166,11 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
-    <Compile Include="Forms and Formats\forms.aspx.cs">
+    <Compile Include="forms.aspx.cs">
       <DependentUpon>forms.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Forms and Formats\forms.aspx.designer.cs">
+    <Compile Include="forms.aspx.designer.cs">
       <DependentUpon>forms.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
@@ -185,6 +187,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets\animatecss\animate.min.css" />
     <Content Include="assets\bootstrap\css\bootstrap-grid.min.css" />
     <Content Include="assets\bootstrap\css\bootstrap-reboot.min.css" />
     <Content Include="assets\bootstrap\css\bootstrap.min.css" />
@@ -192,24 +195,31 @@
     <Content Include="assets\dropdown\css\style.css" />
     <Content Include="assets\dropdown\js\nav-dropdown.js" />
     <Content Include="assets\dropdown\js\navbar-dropdown.js" />
-    <Content Include="assets\images\mbr-2.jpeg" />
+    <Content Include="assets\fonts\ARLRDBD\style.css" />
+    <Content Include="assets\fonts\BOOKOSI\style.css" />
+    <Content Include="assets\fonts\style.css" />
+    <Content Include="assets\fonts\UbuntuMono-B\style.css" />
+    <Content Include="assets\fonts\verdanai\style.css" />
     <Content Include="assets\images\mbr.jpg" />
     <Content Include="assets\images\r-1.png" />
-    <Content Include="assets\images\r-122x48.png" />
     <Content Include="assets\mobirise\css\mbr-additional.css" />
     <Content Include="assets\parallax\jarallax.min.js" />
     <Content Include="assets\popper\popper.min.js" />
     <Content Include="assets\smoothscroll\smooth-scroll.js" />
     <Content Include="assets\socicon\css\styles.css" />
+    <Content Include="assets\socicon\fonts\socicon.svg" />
     <Content Include="assets\tether\tether.min.css" />
     <Content Include="assets\tether\tether.min.js" />
     <Content Include="assets\theme\css\style.css" />
     <Content Include="assets\theme\js\script.js" />
     <Content Include="assets\touchswipe\jquery.touch-swipe.min.js" />
+    <Content Include="assets\viewportchecker\jquery.viewportchecker.js" />
     <Content Include="assets\vimeoplayer\jquery.mb.vimeo_player.js" />
     <Content Include="assets\web\assets\jquery\jquery.min.js" />
     <Content Include="assets\web\assets\mobirise-icons-bold\mobirise-icons-bold.css" />
+    <Content Include="assets\web\assets\mobirise-icons-bold\mobirise-icons-bold.svg" />
     <Content Include="assets\web\assets\mobirise-icons\mobirise-icons.css" />
+    <Content Include="assets\web\assets\mobirise-icons\mobirise-icons.svg" />
     <Content Include="data1\images\abstractgeometricbannertemplatevector.jpg" />
     <Content Include="data1\images\abstractparticlesdotsbackgroundbannervector.jpg" />
     <Content Include="data1\images\abstracttechnologybannertemplatevector.jpg" />
@@ -304,7 +314,12 @@
     <Content Include="engine1\wowslider.js" />
     <Content Include="engine1\wowslider.mod.js" />
     <Content Include="favicon.ico" />
-    <Content Include="Forms and Formats\forms.aspx" />
+    <Content Include="fonts\ARLRDBD\style.css" />
+    <Content Include="fonts\BOOKOSI\style.css" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\UbuntuMono-B\style.css" />
+    <Content Include="fonts\verdanai\style.css" />
+    <Content Include="forms.aspx" />
     <Content Include="Forms and Formats\images\699434.png" />
     <Content Include="Forms and Formats\css\animate.css" />
     <Content Include="Forms and Formats\css\bootstrap.min.css" />
@@ -403,20 +418,6 @@
     <Content Include="Forms and Formats\js\wow.min.js" />
     <Content Include="Forms and Formats\php\ajax_menu.html" />
     <Content Include="Global.asax" />
-    <Content Include="assets\images\hashes.json" />
-    <Content Include="assets\socicon\fonts\socicon.eot" />
-    <Content Include="assets\socicon\fonts\socicon.svg" />
-    <Content Include="assets\socicon\fonts\socicon.ttf" />
-    <Content Include="assets\socicon\fonts\socicon.woff" />
-    <Content Include="assets\socicon\fonts\socicon.woff2" />
-    <Content Include="assets\web\assets\mobirise-icons-bold\mobirise-icons-bold.eot" />
-    <Content Include="assets\web\assets\mobirise-icons-bold\mobirise-icons-bold.svg" />
-    <Content Include="assets\web\assets\mobirise-icons-bold\mobirise-icons-bold.ttf" />
-    <Content Include="assets\web\assets\mobirise-icons-bold\mobirise-icons-bold.woff" />
-    <Content Include="assets\web\assets\mobirise-icons\mobirise-icons.eot" />
-    <Content Include="assets\web\assets\mobirise-icons\mobirise-icons.svg" />
-    <Content Include="assets\web\assets\mobirise-icons\mobirise-icons.ttf" />
-    <Content Include="assets\web\assets\mobirise-icons\mobirise-icons.woff" />
     <Content Include="Forms and Formats\fonts\fontawesome-webfont.eot" />
     <Content Include="Forms and Formats\fonts\fontawesome-webfont.svg" />
     <Content Include="Forms and Formats\fonts\fontawesome-webfont.ttf" />
@@ -425,6 +426,30 @@
     <Content Include="Forms and Formats\fonts\FontAwesome.otf" />
     <Content Include="Forms and Formats\images\Thumbs.db" />
     <Content Include="Forms and Formats\Downloadables\MedicalBook .doc" />
+    <Content Include="assets\fonts\ARLRDBD\font.TTF" />
+    <Content Include="assets\fonts\BOOKOSI\font.TTF" />
+    <Content Include="assets\fonts\UbuntuMono-B\font.ttf" />
+    <Content Include="assets\fonts\verdanai\font.ttf" />
+    <Content Include="assets\images\hashes.json" />
+    <Content Include="assets\socicon\fonts\socicon.eot" />
+    <Content Include="assets\socicon\fonts\socicon.ttf" />
+    <Content Include="assets\socicon\fonts\socicon.woff" />
+    <Content Include="assets\socicon\fonts\socicon.woff2" />
+    <Content Include="assets\web\assets\mobirise-icons-bold\mobirise-icons-bold.eot" />
+    <Content Include="assets\web\assets\mobirise-icons-bold\mobirise-icons-bold.ttf" />
+    <Content Include="assets\web\assets\mobirise-icons-bold\mobirise-icons-bold.woff" />
+    <Content Include="assets\web\assets\mobirise-icons\mobirise-icons.eot" />
+    <Content Include="assets\web\assets\mobirise-icons\mobirise-icons.ttf" />
+    <Content Include="assets\web\assets\mobirise-icons\mobirise-icons.woff" />
+    <Content Include="fonts\ARLRDBD\font.TTF" />
+    <Content Include="fonts\BOOKOSI\font.TTF" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\UbuntuMono-B\font.ttf" />
+    <Content Include="fonts\verdanai\font.ttf" />
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="home.aspx" />
     <Content Include="Scripts\jquery-1.7.1.js" />
